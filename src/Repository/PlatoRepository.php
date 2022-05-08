@@ -23,6 +23,49 @@ class PlatoRepository extends ServiceEntityRepository
         parent::__construct($registry, Plato::class);
     }
 
+
+    public function savePlato($id, $Nombre, $Tipo, $Altranuces, $Apio, $Cacahuetes, $Crustaceos, $Sulfitos, $Cascara, $Gluten, $Sesamo, $Huevo, $Lacteos, $Moluscos, $Mostaza, $Pescado, $Soja)
+    {
+        $newPlato = new Plato();
+
+        $newPlato
+            ->setId($id)
+            ->setNombre($Nombre)
+            ->setTipo($Tipo)
+            ->setAltranuces($Altranuces)
+            ->setApio($Apio)
+            ->setCacahuetes($Cacahuetes)
+            ->setCrustaceos($Crustaceos)
+            ->setSulfitos($Sulfitos)
+            ->setCascara($Cascara)
+            ->setGluten($Gluten)
+            ->setSesamo($Sesamo)
+            ->setHuevo($Huevo)
+            ->setLacteos($Lacteos)
+            ->setMoluscos($Moluscos)
+            ->setMostaza($Mostaza)
+            ->setPescado($Pescado)
+            ->setSoja($Soja);
+
+        $this->manager->persist($newPlato);
+        $this->manager->flush();
+    }
+
+    public function updatePlato(Plato $plato): Plato
+    {
+        $this->manager->persist($plato);
+        $this->manager->flush();
+
+        return $plato;
+    }
+
+
+    public function removePlato(Plato $plato)
+    {
+        $this->manager->remove($plato);
+        $this->manager->flush();
+    }
+
     /**
      * @throws ORMException
      * @throws OptimisticLockException

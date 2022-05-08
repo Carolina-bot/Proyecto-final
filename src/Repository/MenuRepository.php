@@ -23,6 +23,39 @@ class MenuRepository extends ServiceEntityRepository
         parent::__construct($registry, Menu::class);
     }
 
+    public function saveMenu($id ,$Fecha, $Plato1, $Plato2, $Plato3, $Plato4, $Plato5, $Plato6)
+    {
+        $newMenu = new Menu();
+
+        $newMenu
+            ->setId($id)
+            ->setFecha($Fecha)
+            ->setPlato1($Plato1)
+            ->setPlato2($Plato2)
+            ->setPlato3($Plato3)
+            ->setPlato4($Plato4)
+            ->setPlato5($Plato5)
+            ->setPlato6($Plato6);
+
+        $this->manager->persist($newMenu);
+        $this->manager->flush();
+    }
+
+    public function updateMenu(Menu $menu): Menu
+    {
+        $this->manager->persist($menu);
+        $this->manager->flush();
+
+        return $menu;
+    }
+
+
+    public function removeMenu(Menu $menu)
+    {
+        $this->manager->remove($menu);
+        $this->manager->flush();
+    }
+
     /**
      * @throws ORMException
      * @throws OptimisticLockException

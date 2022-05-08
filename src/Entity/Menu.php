@@ -39,6 +39,13 @@ class Menu
         return $this->id;
     }
 
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     public function getFecha(): ?\DateTimeInterface
     {
         return $this->Fecha;

@@ -66,9 +66,9 @@ class Plato
         return $this->id;
     }
 
-    public function setId(int $Id): self
+    public function setId(int $id): self
     {
-        $this->Id = $Id;
+        $this->Id = $id;
 
         return $this;
     }
