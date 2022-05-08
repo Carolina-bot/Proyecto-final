@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plato index{% endblock %}
+
+{% block body %}
+    <h1>Plato index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Altranuces</th>
+                <th>Apio</th>
+                <th>Cacahuetes</th>
+                <th>Crustaceos</th>
+                <th>Sulfitos</th>
+                <th>Cascara</th>
+                <th>Gluten</th>
+                <th>Sesamo</th>
+                <th>Huevo</th>
+                <th>Lacteos</th>
+                <th>Moluscos</th>
+                <th>Mostaza</th>
+                <th>Pescado</th>
+                <th>Soja</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plato in platos %}
+            <tr>
+                <td>{{ plato.id }}</td>
+                <td>{{ plato.Nombre }}</td>
+                <td>{{ plato.Tipo }}</td>
+                <td>{{ plato.Altranuces ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Apio ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Cacahuetes ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Crustaceos ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Sulfitos ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Cascara ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Gluten ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Sesamo ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Huevo ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Lacteos ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Moluscos ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Mostaza ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Pescado ? 'Yes' : 'No' }}</td>
+                <td>{{ plato.Soja ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_plato_show', {'id': plato.id}) }}">show</a>
+                    <a href="{{ path('app_plato_edit', {'id': plato.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_plato_new') }}">Create new</a>
+{% endblock %}

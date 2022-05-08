@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu index{% endblock %}
+
+{% block body %}
+    <h1>Menu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Plato1</th>
+                <th>Plato2</th>
+                <th>Plato3</th>
+                <th>Plato4</th>
+                <th>Plato5</th>
+                <th>Plato6</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for menu in menus %}
+            <tr>
+                <td>{{ menu.id }}</td>
+                <td>{{ menu.Fecha ? menu.Fecha|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ menu.Plato1 }}</td>
+                <td>{{ menu.Plato2 }}</td>
+                <td>{{ menu.Plato3 }}</td>
+                <td>{{ menu.Plato4 }}</td>
+                <td>{{ menu.Plato5 }}</td>
+                <td>{{ menu.Plato6 }}</td>
+                <td>
+                    <a href="{{ path('app_menu_show', {'id': menu.id}) }}">show</a>
+                    <a href="{{ path('app_menu_edit', {'id': menu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_menu_new') }}">Create new</a>
+{% endblock %}

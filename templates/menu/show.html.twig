@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block body %}
+    <h1>Menu</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ menu.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ menu.Fecha ? menu.Fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Plato1</th>
+                <td>{{ menu.Plato1 }}</td>
+            </tr>
+            <tr>
+                <th>Plato2</th>
+                <td>{{ menu.Plato2 }}</td>
+            </tr>
+            <tr>
+                <th>Plato3</th>
+                <td>{{ menu.Plato3 }}</td>
+            </tr>
+            <tr>
+                <th>Plato4</th>
+                <td>{{ menu.Plato4 }}</td>
+            </tr>
+            <tr>
+                <th>Plato5</th>
+                <td>{{ menu.Plato5 }}</td>
+            </tr>
+            <tr>
+                <th>Plato6</th>
+                <td>{{ menu.Plato6 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_menu_index') }}">back to list</a>
+
+    <a href="{{ path('app_menu_edit', {'id': menu.id}) }}">edit</a>
+
+    {{ include('menu/_delete_form.html.twig') }}
+{% endblock %}
