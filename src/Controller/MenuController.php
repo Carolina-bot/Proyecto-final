@@ -15,7 +15,6 @@ use Doctrine\ORM\EntityManagerInterface;
 #[Route('/api')]
 class MenuController extends AbstractController
 {
-
     public function __construct(MenuRepository $menuRepository)
     {
         $this->menuRepository = $menuRepository;
@@ -27,7 +26,7 @@ class MenuController extends AbstractController
         $data = json_decode($request->getContent(), true);
 
         $id = $data['id'];
-        $Fecha = $data['Fecha'];
+        $Fecha = date("d/m/Y");
         $Plato1 = $data['Plato1'];
         $Plato2 = $data['Plato2'];
         $Plato3 = $data['Plato3'];
@@ -83,8 +82,6 @@ class MenuController extends AbstractController
             ];
 
         }
-
-
 
         return new JsonResponse($data, Response::HTTP_OK);
     }
