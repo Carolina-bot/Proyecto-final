@@ -20,7 +20,7 @@ class PlatoController extends AbstractController
         $this->platoRepository = $platoRepository;
     }
 
-    #[Route('/plato', name: 'add', methods: ["POST"])]
+    #[Route('/plato', name: 'addPlato', methods: ["POST"])]
     public function add(Request $request, EntityManagerInterface $em): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
@@ -48,7 +48,7 @@ class PlatoController extends AbstractController
         return new JsonResponse(['status' => 'Creado!'], Response::HTTP_CREATED);
     }
 
-    #[Route('/plato/{id}', name: 'get', methods: ["GET"])]
+    #[Route('/plato/{id}', name: 'getPlato', methods: ["GET"])]
     public function get($id): JsonResponse
     {
         $plato = $this->platoRepository->findOneBy(['id' => $id]);
@@ -78,7 +78,7 @@ class PlatoController extends AbstractController
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
-    #[Route('/platos', name: 'getAll', methods: ["GET"])]
+    #[Route('/platos', name: 'getAllPlato', methods: ["GET"])]
     public function getAll(): JsonResponse
     {
         $platos = $this->platoRepository->findAll();
@@ -115,7 +115,7 @@ class PlatoController extends AbstractController
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
-    #[Route('/plato/{id}', name: 'update', methods: ["PUT"])]
+    #[Route('/plato/{id}', name: 'updatePlato', methods: ["PUT"])]
     public function update($id, Request $request, EntityManagerInterface $em): JsonResponse
     {
         $plato = $this->platoRepository->findOneBy(['id' => $id]);
@@ -143,7 +143,7 @@ class PlatoController extends AbstractController
         return new JsonResponse(['status' => 'Modificado!'], Response::HTTP_OK);
     }
 
-    #[Route('/plato/{id}', name: 'delete', methods: ["DELETE"])]
+    #[Route('/plato/{id}', name: 'deletePlato', methods: ["DELETE"])]
     public function removePlato($id): JsonResponse
     {
         $plato = $this->platoRepository->findOneBy(['id' => $id]);

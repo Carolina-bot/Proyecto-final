@@ -20,7 +20,7 @@ class MenuController extends AbstractController
         $this->menuRepository = $menuRepository;
     }
 
-    #[Route('/menu', name: 'add', methods: ["POST"])]
+    #[Route('/menu', name: 'addMenu', methods: ["POST"])]
     public function add(Request $request, EntityManagerInterface $em): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
@@ -39,7 +39,7 @@ class MenuController extends AbstractController
         return new JsonResponse(['status' => 'Creado!'], Response::HTTP_CREATED);
     }
 
-    #[Route('/menu/{id}', name: 'get', methods: ["GET"])]
+    #[Route('/menu/{id}', name: 'getMenu', methods: ["GET"])]
     public function get($id): JsonResponse
     {
         $menu = $this->menuRepository->findOneBy(['id' => $id]);
@@ -60,16 +60,14 @@ class MenuController extends AbstractController
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
-    #[Route('/menus', name: 'getAll', methods: ["GET"])]
+    #[Route('/menus', name: 'getAllMenu', methods: ["GET"])]
     public function getAll(): JsonResponse
     {
         $menus = $this->menuRepository->findAll();
         $data = [];
 
         foreach ($menus as $menu) {
-
             $data[] = [
-
                 'id' => $menu->getId(),
                 'Fecha' => $menu->getFecha(),
                 'Plato1' => $menu->getPlato1(),
@@ -78,15 +76,13 @@ class MenuController extends AbstractController
                 'Plato4' => $menu->getPlato4(),
                 'Plato5' => $menu->getPlato5(),
                 'Plato6' => $menu->getPlato6(),
-                
             ];
-
         }
 
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
-    #[Route('/menu/{id}', name: 'update', methods: ["PUT"])]
+    #[Route('/menu/{id}', name: 'updateMenu', methods: ["PUT"])]
     public function update($id, Request $request, EntityManagerInterface $em): JsonResponse
     {
         $menu = $this->menuRepository->findOneBy(['id' => $id]);
@@ -105,7 +101,7 @@ class MenuController extends AbstractController
         return new JsonResponse(['status' => 'Modificado!'], Response::HTTP_OK);
     }
 
-    #[Route('/menu/{id}', name: 'delete', methods: ["DELETE"])]
+    #[Route('/menu/{id}', name: 'deleteMenu', methods: ["DELETE"])]
     public function removeMenu($id): JsonResponse
     {
         $menu = $this->menuRepository->findOneBy(['id' => $id]);
