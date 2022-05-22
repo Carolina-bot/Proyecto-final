@@ -26,7 +26,7 @@ class MenuController extends AbstractController
         $data = json_decode($request->getContent(), true);
 
         $id = $data['id'];
-        $Fecha = date("d/m/Y");
+        $Fecha = new \DateTime($data['Fecha']);
         $Plato1 = $data['Plato1'];
         $Plato2 = $data['Plato2'];
         $Plato3 = $data['Plato3'];
@@ -47,7 +47,7 @@ class MenuController extends AbstractController
         $data = [
 
             'id' => $menu->getId(),
-            'Fecha' => $menu->getFecha(),
+            'Fecha' => date_format($menu->getFecha(), 'd-m-Y'),
             'Plato1' => $menu->getPlato1(),
             'Plato2' => $menu->getPlato2(),
             'Plato3' => $menu->getPlato3(),
@@ -69,7 +69,7 @@ class MenuController extends AbstractController
         foreach ($menus as $menu) {
             $data[] = [
                 'id' => $menu->getId(),
-                'Fecha' => $menu->getFecha(),
+                'Fecha' => date_format($menu->getFecha(), 'd-m-Y'),
                 'Plato1' => $menu->getPlato1(),
                 'Plato2' => $menu->getPlato2(),
                 'Plato3' => $menu->getPlato3(),
@@ -88,7 +88,7 @@ class MenuController extends AbstractController
         $menu = $this->menuRepository->findOneBy(['id' => $id]);
         $data = json_decode($request->getContent(), true);
 
-        empty($data['Fecha']) ? true : $menu->setFecha($data['Fecha']);
+        empty($data['Fecha']) ? true : $menu->setFecha(new \DateTime($data['Fecha']));
         empty($data['Plato1']) ? true : $menu->setPlato1($data['Plato1']);
         empty($data['Plato2']) ? true : $menu->setPlato2($data['Plato2']);
         empty($data['Plato3']) ? true : $menu->setPlato3($data['Plato3']);
