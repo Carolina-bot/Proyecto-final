@@ -1,0 +1,152 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="form">
+        <div class="form-row">
+            <fieldset>
+                <div class="form-group col-md-5">
+                    <label for="inputId">Id</label>
+                    <input type="number" formControlName="id" class="form-control" [(ngModel)]="platos[0].data.id">
+                </div>
+            </fieldset>
+            <div class="form-group col-md-5" style="margin-left: -150px;">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" formControlName="Nombre" class="form-control" [(ngModel)]="platos[0].data.Nombre">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputTipo">Tipo</label>
+                <input type="text" formControlName="Tipo" class="form-control" [(ngModel)]="platos[0].data.Tipo">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Altranuces; else elseBlock">
+                    <input class="form-check-input" formControlName="Altranuces" type="checkbox" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Altranuces" type="checkbox">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox1">Altranuces</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Apio; else elseBlock">
+                    <input class="form-check-input" formControlName="Apio" type="checkbox" value="Apio" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Apio" type="checkbox" value="Apio">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox2">Apio</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Cacahuetes; else elseBlock">
+                    <input class="form-check-input" formControlName="Cacahuetes" type="checkbox" value="Cacahuetes" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Cacahuetes" type="checkbox" value="Cacahuetes">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox3">Cacahuetes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Crustaceos; else elseBlock">
+                    <input class="form-check-input" formControlName="Crustaceos" type="checkbox" value="Crustaceos" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Crustaceos" type="checkbox" value="Crustaceos">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox4">Crustaceos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Sulfitos; else elseBlock">
+                    <input class="form-check-input" formControlName="Sulfitos" type="checkbox" value="Sulfitos" checked>
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Sulfitos" type="checkbox" value="Sulfitos" ng-checked={{ platos[0].data.Sulfitos }}>
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox5">Sulfitos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Cascara; else elseBlock">
+                    <input class="form-check-input" formControlName="Cascara" type="checkbox" value="Cascara" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Cascara" type="checkbox" value="Cascara">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox6">Cascara</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Gluten; else elseBlock">
+                    <input class="form-check-input" formControlName="Gluten" type="checkbox" value="Gluten" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Gluten" type="checkbox" value="Gluten">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox7">Gluten</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Sesamo; else elseBlock">
+                    <input class="form-check-input" formControlName="Sesamo" type="checkbox" value="Sesamo" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Sesamo" type="checkbox" value="Sesamo">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox8">Sesamo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Huevo; else elseBlock">
+                    <input class="form-check-input" formControlName="Huevo" type="checkbox" value="Huevo" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Huevo" type="checkbox" value="Huevo">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox9">Huevo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Lacteos; else elseBlock">
+                    <input class="form-check-input" formControlName="Lacteos" type="checkbox" value="Lacteos" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Lacteos" type="checkbox" value="Lacteos">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox10">Lacteos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Moluscos; else elseBlock">
+                    <input class="form-check-input" formControlName="Moluscos" type="checkbox" value="Moluscos" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Moluscos" type="checkbox" value="Moluscos">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox11">Moluscos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Mostaza; else elseBlock">
+                    <input class="form-check-input" formControlName="Mostaza" type="checkbox" value="Mostaza" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Mostaza" type="checkbox" value="Mostaza">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox12">Mostaza</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Pescado; else elseBlock">
+                    <input class="form-check-input" formControlName="Mostaza" type="checkbox" value="Pescado" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Mostaza" type="checkbox" value="Pescado">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox13">Pescado</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <div *ngIf="platos[0].data.Soja; else elseBlock">
+                    <input class="form-check-input" formControlName="Soja" type="checkbox" value="Soja" ng-checked="true">
+                </div>
+                <ng-template #elseBlock>
+                    <input class="form-check-input" formControlName="Soja" type="checkbox" value="Soja">
+                </ng-template>
+                <label class="form-check-label" for="inlineCheckbox14">Soja</label>
+            </div>
+        </div>
+
+        <div class="form-row" style="margin: 15px;">
+            <button><a (click)="update()" routerLink="../plato">Enviar</a></button>
+        </div>
+    </form>
+</div>

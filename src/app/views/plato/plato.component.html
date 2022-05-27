@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let plato of platos">
+            <tr>
+                <th scope="row">{{ plato.id }}</th>
+                <td>{{ plato.Nombre }}</td>
+                <td>{{ plato.Tipo }}</td>
+                <td>
+                    <a (click)="onModificar(plato.id)" routerLink="../form-plato"><img class="icon" src="../../../assets/edit.png"></a>
+                    <a (click)="onDelete(plato.id)"><img class="icon" src="../../../assets/delete.png"></a>
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+                <a routerLink="../add-plato"><img class="icon" src="../../../assets/add.png"></a>
+            </th>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+.logo {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: red;
+}

@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+html {
+    background-color: black;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+hr {
+    background-color: red;
+    height: 1px;
+}

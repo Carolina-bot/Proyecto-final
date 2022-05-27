@@ -1,0 +1,82 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="form">
+        <div class="form-row">
+            <fieldset>
+                <div class="form-group col-md-5">
+                    <label for="inputId">Id</label>
+                    <input type="number" formControlName="id" class="form-control" id="inputId">
+                </div>
+            </fieldset>
+            <div class="form-group col-md-5" style="margin-left: -150px;">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" formControlName="Nombre" class="form-control" id="Nombre">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputTipo">Tipo</label>
+                <input type="text" formControlName="Tipo" class="form-control" id="inputTipo">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Altranuces" type="checkbox" id="inlineCheckbox1">
+                <label class="form-check-label" for="inlineCheckbox1">Altranuces</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Apio" type="checkbox" id="inlineCheckbox1" value="Apio">
+                <label class="form-check-label" for="inlineCheckbox2">Apio</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Cacahuetes" type="checkbox" id="inlineCheckbox1" value="Cacahuetes">
+                <label class="form-check-label" for="inlineCheckbox3">Cacahuetes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Crustaceos" type="checkbox" id="inlineCheckbox1" value="Crustaceos">
+                <label class="form-check-label" for="inlineCheckbox4">Crustaceos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Sulfitos" type="checkbox" id="inlineCheckbox1" value="Sulfitos">
+                <label class="form-check-label" for="inlineCheckbox5">Sulfitos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Cascara" type="checkbox" id="inlineCheckbox1" value="Cascara">
+                <label class="form-check-label" for="inlineCheckbox6">Cascara</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Gluten" type="checkbox" id="inlineCheckbox1" value="Gluten">
+                <label class="form-check-label" for="inlineCheckbox7">Gluten</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Sesamo" type="checkbox" id="inlineCheckbox1" value="Sesamo">
+                <label class="form-check-label" for="inlineCheckbox8">Sesamo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Huevo" type="checkbox" id="inlineCheckbox1" value="Huevo">
+                <label class="form-check-label" for="inlineCheckbox9">Huevo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Lacteos" type="checkbox" id="inlineCheckbox1" value="Lacteos">
+                <label class="form-check-label" for="inlineCheckbox10">Lacteos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Moluscos" type="checkbox" id="inlineCheckbox1" value="Moluscos">
+                <label class="form-check-label" for="inlineCheckbox11">Moluscos</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Mostaza" type="checkbox" id="inlineCheckbox1" value="Mostaza">
+                <label class="form-check-label" for="inlineCheckbox12">Mostaza</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Mostaza" type="checkbox" id="inlineCheckbox1" value="Pescado">
+                <label class="form-check-label" for="inlineCheckbox13">Pescado</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" formControlName="Soja" type="checkbox" id="inlineCheckbox1" value="Soja">
+                <label class="form-check-label" for="inlineCheckbox14">Soja</label>
+            </div>
+        </div>
+
+        <div class="form-row" style="margin: 15px;">
+            <button><a (click)="add()" routerLink="../plato">Enviar</a></button>
+        </div>
+    </form>
+</div>

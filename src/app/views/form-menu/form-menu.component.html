@@ -1,0 +1,48 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="form">
+        <div class="form-row">
+            <fieldset>
+                <div class="form-group col-md-5">
+                    <label for="inputId">Id</label>
+                    <input type="number" formControlName="id" class="form-control" [(ngModel)]="menus[0].data.id">
+                </div>
+            </fieldset>
+            <div class="form-group col-md-5" style="margin-left: -150px;">
+                <label for="inputFecha">Fecha</label>
+                <input type="date" formControlName="Fecha" class="form-control" [(ngModel)]="menus[0].data.Fecha">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputPlato1">Plato1</label>
+                <input type="text" formControlName="Plato1" class="form-control" [(ngModel)]="menus[0].data.Plato1">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPlato2">Plato2</label>
+                <input type="text" formControlName="Plato2" class="form-control" [(ngModel)]="menus[0].data.Plato2">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPlato3">Plato3</label>
+                <input type="text" formControlName="Plato3" class="form-control" [(ngModel)]="menus[0].data.Plato3">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputPlato4">Plato4</label>
+                <input type="text" formControlName="Plato4" class="form-control" [(ngModel)]="menus[0].data.Plato4">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPlato5">Plato5</label>
+                <input type="text" formControlName="Plato5" class="form-control" [(ngModel)]="menus[0].data.Plato5">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputPlato6">Plato6</label>
+                <input type="text" formControlName="Plato6" class="form-control" [(ngModel)]="menus[0].data.Plato6">
+            </div>
+        </div>
+
+        <div class="form-row" style="margin: 15px;">
+            <button><a (click)="update()" routerLink="../menu">Enviar</a></button>
+        </div>
+    </form>
+</div>

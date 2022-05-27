@@ -1,0 +1,46 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Plato1</th>
+                <th scope="col">Plato2</th>
+                <th scope="col">Plato3</th>
+                <th scope="col">Plato4</th>
+                <th scope="col">Plato5</th>
+                <th scope="col">Plato6</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let menu of menus">
+            <tr>
+                <th scope="row">{{ menu.id }}</th>
+                <td>{{ menu.Fecha }}</td>
+                <td>{{ menu.Plato1 }}</td>
+                <td>{{ menu.Plato2 }}</td>
+                <td>{{ menu.Plato3 }}</td>
+                <td>{{ menu.Plato4 }}</td>
+                <td>{{ menu.Plato5 }}</td>
+                <td>{{ menu.Plato6 }}</td>
+                <td>
+                    <a (click)="onModificar(menu.id)" routerLink="../form-menu"><img class="icon" src="../../../assets/edit.png"></a>
+                    <a (click)="onDelete(menu.id)"><img class="icon" src="../../../assets/delete.png"></a>
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+                <a routerLink="../add-menu"><img class="icon" src="../../../assets/add.png"></a>
+            </th>
+        </tr>
+    </table>
+</div>
